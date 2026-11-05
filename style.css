@@ -1,0 +1,1476 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Inter:wght@400;500;600;700;800&display=swap');
+
+/* ==============================
+   NOVA FITNESS — STYLE GLOBAL
+============================== */
+
+
+:root {
+  --bleu: #607866;
+  --bleu-fonce: #435849;
+  --bleu-clair: #b2bba9;
+  --anthracite: #202522;
+  --noir: #171b18;
+  --blanc: #ffffff;
+  --fond-clair: #f5f3ed;
+  --gris: #707770;
+}
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: var(--fond-clair);
+  color: var(--anthracite);
+  overflow-x: hidden;
+}
+
+a {
+  text-decoration: none;
+}
+
+h1,
+h2,
+h3 {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 800;
+  line-height: 1.05;
+}
+
+/* ==============================
+   NAVIGATION
+============================== */
+
+.header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 10;
+}
+
+.navigation {
+  width: 100%;
+  max-width: 1350px;
+  margin: auto;
+  padding: 30px 6%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+}
+
+.logo {
+  color: var(--blanc);
+  font-size: 25px;
+  font-weight: 800;
+  letter-spacing: -1px;
+  white-space: nowrap;
+}
+
+.logo span {
+  color: var(--bleu-clair);
+}
+
+.liens {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.liens a {
+  color: var(--blanc);
+  font-size: 13px;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.liens a:not(.bouton-nav):hover {
+  color: var(--bleu-clair);
+}
+
+.liens .bouton-nav {
+  background: var(--bleu);
+  color: var(--blanc);
+  padding: 15px 22px;
+  transition: background 0.3s ease,
+              transform 0.3s ease;
+}
+
+.liens .bouton-nav:hover {
+  background: var(--bleu-fonce);
+  transform: translateY(-2px);
+}
+
+/* ==============================
+   HERO — ACCUEIL
+============================== */
+
+.hero {
+  position: relative;
+  min-height: 100vh;
+  min-height: 100svh;
+  display: flex;
+  align-items: center;
+  padding: 150px 8% 100px;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(15, 21, 29, 0.93) 0%,
+      rgba(20, 28, 38, 0.72) 48%,
+      rgba(20, 28, 38, 0.25) 100%
+    ),
+    url("images/salle.jpg") center/cover no-repeat;
+
+  color: var(--blanc);
+}
+
+.hero-contenu {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 850px;
+}
+
+.surtitre {
+  color: var(--bleu-clair);
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  margin-bottom: 22px;
+}
+
+.hero h1 {
+  font-size: clamp(55px, 7.5vw, 110px);
+  letter-spacing: -1px;
+  margin-bottom: 28px;
+}
+
+.hero-contenu > p:not(.surtitre) {
+  max-width: 530px;
+  color: #e1e5eb;
+  font-size: 16px;
+  line-height: 1.9;
+  margin-bottom: 35px;
+}
+
+/* ==============================
+   BOUTONS
+============================== */
+
+.bouton-principal {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 55px;
+  padding: 18px 30px;
+
+  background: var(--bleu);
+  color: var(--blanc);
+
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+
+  transition: background 0.3s ease,
+              transform 0.3s ease,
+              box-shadow 0.3s ease;
+}
+
+.bouton-principal:hover {
+  background: var(--bleu-fonce);
+  transform: translateY(-3px);
+  box-shadow: 0 10px 30px rgba(50, 120, 200, 0.25);
+}
+
+.bouton-principal:focus-visible,
+.liens a:focus-visible,
+.logo:focus-visible {
+  outline: 2px solid var(--bleu-clair);
+  outline-offset: 4px;
+}
+
+/* ==============================
+   INTRODUCTION
+============================== */
+
+.introduction {
+  width: 100%;
+  max-width: 1050px;
+  margin: 0 auto;
+  padding: 115px 8%;
+  text-align: center;
+}
+
+.introduction .surtitre {
+  color: var(--bleu);
+}
+
+.introduction h2 {
+  font-size: clamp(42px, 5.5vw, 70px);
+  margin-bottom: 28px;
+  color: var(--anthracite);
+}
+
+.introduction > p:last-child {
+  max-width: 720px;
+  margin: 0 auto;
+  color: var(--gris);
+  font-size: 16px;
+  line-height: 1.9;
+}
+
+/* ==============================
+   TABLETTES
+============================== */
+
+@media (max-width: 1000px) {
+  .navigation {
+    padding: 25px 5%;
+  }
+
+  .liens {
+    gap: 18px;
+  }
+
+  .liens a {
+    font-size: 12px;
+  }
+
+  .hero {
+    padding-left: 7%;
+    padding-right: 7%;
+  }
+}
+
+/* ==============================
+   MOBILE
+============================== */
+
+@media (max-width: 750px) {
+  .header {
+    position: absolute;
+  }
+
+  .navigation {
+    flex-direction: column;
+    justify-content: center;
+    gap: 22px;
+    padding: 24px 5%;
+  }
+
+  .logo {
+    font-size: 23px;
+  }
+
+  .liens {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px 20px;
+  }
+
+  .liens a {
+    font-size: 11px;
+  }
+
+  .liens .bouton-nav {
+    padding: 11px 14px;
+  }
+
+  .hero {
+    min-height: 100svh;
+    padding: 240px 6% 90px;
+    background-position: center;
+  }
+
+  .hero h1 {
+    font-size: clamp(48px, 11vw, 75px);
+    letter-spacing: 0;
+  }
+
+  .hero-contenu > p:not(.surtitre) {
+    font-size: 14px;
+    line-height: 1.8;
+  }
+
+  .surtitre {
+    font-size: 10px;
+    letter-spacing: 2px;
+  }
+
+  .introduction {
+    padding: 80px 7%;
+  }
+
+  .introduction h2 {
+    font-size: 43px;
+  }
+
+  .introduction > p:last-child {
+    font-size: 14px;
+  }
+}
+
+/* ==============================
+   PETITS TÉLÉPHONES
+============================== */
+
+@media (max-width: 390px) {
+  .navigation {
+    padding-left: 3%;
+    padding-right: 3%;
+  }
+
+  .liens {
+    gap: 12px;
+  }
+
+  .liens a {
+    font-size: 10px;
+  }
+
+  .hero {
+    padding-top: 260px;
+  }
+
+  .hero h1 {
+    font-size: 46px;
+  }
+}
+
+/* ==============================
+   ACCESSIBILITÉ
+============================== */
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+  }
+}
+
+/* ==============================
+   NOVA FITNESS — NOS ESPACES
+============================== */
+
+.espaces {
+  padding: 100px 6%;
+  background: #f5f3ed;
+}
+
+.espaces-entete {
+  max-width: 760px;
+  margin: 0 auto 55px;
+  text-align: center;
+}
+
+.espaces-entete .surtitre {
+  color: #607866;
+}
+
+.espaces-entete h2 {
+  font-size: clamp(40px, 5vw, 68px);
+  color: #202522;
+  margin-bottom: 20px;
+}
+
+.espaces-entete > p:last-child {
+  color: #707770;
+  font-size: 15px;
+  line-height: 1.8;
+}
+
+.espaces-grille {
+  max-width: 1350px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 25px;
+}
+
+.espace-carte {
+  background: #ffffff;
+  overflow: hidden;
+  transition: transform 0.35s ease,
+              box-shadow 0.35s ease;
+}
+
+.espace-carte:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.10);
+}
+
+.espace-image {
+  height: 310px;
+  overflow: hidden;
+  background: #d8dbd5;
+}
+
+.espace-image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.espace-carte:hover .espace-image img {
+  transform: scale(1.06);
+}
+
+.espace-contenu {
+  padding: 32px 28px 38px;
+}
+
+.espace-contenu span {
+  display: block;
+  color: #607866;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  margin-bottom: 15px;
+}
+
+.espace-contenu h3 {
+  color: #202522;
+  font-size: 34px;
+  margin-bottom: 15px;
+}
+
+.espace-contenu p {
+  color: #707770;
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+/* TABLETTE */
+
+@media (max-width: 950px) {
+  .espaces-grille {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* MOBILE */
+
+@media (max-width: 650px) {
+  .espaces {
+    padding: 75px 6%;
+  }
+
+  .espaces-entete {
+    margin-bottom: 35px;
+  }
+
+  .espaces-grille {
+    grid-template-columns: 1fr;
+  }
+
+  .espace-image {
+    height: 280px;
+  }
+
+  .espace-contenu {
+    padding: 25px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .espace-carte,
+  .espace-image img {
+    transition: none;
+  }
+}
+
+/* ==============================
+   NOVA FITNESS — ABONNEMENTS
+============================== */
+
+.abonnements {
+  background: #ffffff;
+  padding: 110px 6%;
+}
+
+.abonnements-entete {
+  max-width: 750px;
+  margin: 0 auto 60px;
+  text-align: center;
+}
+
+.abonnements-entete .surtitre {
+  color: #607866;
+}
+
+.abonnements-entete h2 {
+  font-size: clamp(42px, 5vw, 68px);
+  color: #202522;
+  margin-bottom: 20px;
+}
+
+.abonnements-entete > p:last-child {
+  font-size: 15px;
+  line-height: 1.8;
+  color: #707770;
+}
+
+.abonnements-grille {
+  max-width: 1250px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+  align-items: stretch;
+}
+
+.abonnement-carte {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  background: #f5f3ed;
+  border: 1px solid #e5e6e2;
+  transition: transform 0.3s ease,
+              box-shadow 0.3s ease;
+}
+
+.abonnement-carte:hover {
+  transform: translateY(-7px);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.08);
+}
+
+.abonnement-contenu {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  padding: 42px 32px;
+}
+
+.abonnement-carte h3 {
+  font-size: 39px;
+  color: #202522;
+  margin-bottom: 12px;
+}
+
+.abonnement-description {
+  font-size: 14px;
+  line-height: 1.7;
+  color: #707770;
+  min-height: 48px;
+}
+
+.abonnement-prix {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  margin: 27px 0 30px;
+}
+
+.abonnement-prix strong {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: clamp(38px, 3.5vw, 52px);
+  line-height: 1;
+  color: #202522;
+}
+
+.abonnement-prix span {
+  font-size: 13px;
+  color: #707770;
+}
+
+.abonnement-carte ul {
+  list-style: none;
+  padding: 25px 0 35px;
+  margin: 0;
+  border-top: 1px solid #deded8;
+  flex: 1;
+}
+
+.abonnement-carte li {
+  position: relative;
+  padding: 0 0 0 27px;
+  margin-bottom: 19px;
+  color: #454b46;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.abonnement-carte li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: #607866;
+  font-weight: 800;
+}
+
+.abonnement-bouton {
+  display: block;
+  text-align: center;
+  padding: 18px 15px;
+  background: #202522;
+  color: white;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  transition: background 0.3s ease;
+}
+
+.abonnement-bouton:hover {
+  background: #607866;
+}
+
+/* FORMULE MISE EN AVANT */
+
+.abonnement-populaire {
+  background: #202522;
+  border-color: #202522;
+}
+
+.abonnement-badge {
+  position: absolute;
+  top: -17px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 10px 18px;
+  background: #607866;
+  color: white;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  white-space: nowrap;
+}
+
+.abonnement-populaire h3,
+.abonnement-populaire .abonnement-prix strong {
+  color: white;
+}
+
+.abonnement-populaire .abonnement-description,
+.abonnement-populaire .abonnement-prix span,
+.abonnement-populaire li {
+  color: #d8ddd7;
+}
+
+.abonnement-populaire ul {
+  border-top-color: #4b534d;
+}
+
+.abonnement-populaire li::before {
+  color: #b2bba9;
+}
+
+.abonnement-populaire .abonnement-bouton {
+  background: #607866;
+}
+
+.abonnement-populaire .abonnement-bouton:hover {
+  background: #78947f;
+}
+
+.abonnements-note {
+  text-align: center;
+  margin-top: 35px;
+  font-size: 12px;
+  line-height: 1.7;
+  color: #777;
+}
+
+/* TABLETTE */
+
+@media (max-width: 950px) {
+  .abonnements-grille {
+    grid-template-columns: 1fr;
+    max-width: 520px;
+    gap: 35px;
+  }
+}
+
+/* MOBILE */
+
+@media (max-width: 650px) {
+  .abonnements {
+    padding: 85px 6%;
+  }
+
+  .abonnements-entete {
+    margin-bottom: 55px;
+  }
+
+  .abonnement-contenu {
+    padding: 35px 25px;
+  }
+
+  .abonnement-carte h3 {
+    font-size: 36px;
+  }
+
+  .abonnement-prix strong {
+    font-size: 46px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .abonnement-carte,
+  .abonnement-bouton {
+    transition: none;
+  }
+}
+
+/* ==================================
+   NOVA FITNESS — PLATEAU TOURNANT
+   Cartes portrait, rotation 3D fluide
+================================== */
+.carrousel-abonnements {
+  position: relative;
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 30px 52px;
+}
+
+.abonnements-grille {
+  position: relative;
+  display: block;
+  width: 100%;
+  max-width: 1080px;
+  height: 600px;
+  margin: 0 auto;
+  perspective: 1400px;
+  transform-style: preserve-3d;
+}
+
+.abonnement-carte {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 32%;
+  height: 525px;
+  min-width: 0;
+  margin: 0;
+  transform-origin: center center;
+  transform: translate(-50%, -50%)
+             translateX(var(--decalage, 0%))
+             translateZ(var(--profondeur-3d, 0px))
+             rotateY(var(--angle, 0deg))
+             scale(var(--taille, 1));
+  opacity: var(--opacite, 1);
+  z-index: var(--niveau, 1);
+  transition: transform 850ms cubic-bezier(.22,.8,.25,1),
+              opacity 850ms ease,
+              box-shadow 850ms ease;
+  will-change: transform;
+}
+
+.abonnement-carte:hover,
+.abonnement-carte.carte-active:hover {
+  transform: translate(-50%, -50%)
+             translateX(var(--decalage, 0%))
+             translateZ(var(--profondeur-3d, 0px))
+             rotateY(var(--angle, 0deg))
+             scale(var(--taille, 1));
+}
+
+.abonnement-carte.position-centre {
+  --decalage: 0%;
+  --profondeur-3d: 75px;
+  --angle: 0deg;
+  --taille: 1;
+  --opacite: 1;
+  --niveau: 3;
+  box-shadow: 0 25px 55px rgba(0,0,0,.17);
+}
+
+.abonnement-carte.position-gauche {
+  --decalage: -104%;
+  --profondeur-3d: -75px;
+  --angle: 16deg;
+  --taille: .9;
+  --opacite: .85;
+  --niveau: 1;
+}
+
+.abonnement-carte.position-droite {
+  --decalage: 104%;
+  --profondeur-3d: -75px;
+  --angle: -16deg;
+  --taille: .9;
+  --opacite: .85;
+  --niveau: 1;
+}
+
+.abonnement-contenu { height: 100%; }
+.abonnement-bouton { margin-top: auto; }
+
+.fleche-abonnement {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  display: grid;
+  place-items: center;
+  width: 46px;
+  height: 46px;
+  border: 1px solid #607866;
+  border-radius: 50%;
+  background: #202522;
+  color: #fff;
+  font-size: 22px;
+  cursor: pointer;
+  transition: background .25s ease;
+}
+.fleche-abonnement:hover { background: #607866; }
+.fleche-abonnement:focus-visible { outline: 3px solid #607866; outline-offset: 4px; }
+.fleche-gauche { left: 0; }
+.fleche-droite { right: 0; }
+
+@media (max-width: 950px) {
+  .carrousel-abonnements { padding: 20px 38px; }
+  .abonnements-grille { max-width: 760px; height: 570px; }
+  .abonnement-carte { width: 38%; height: 510px; }
+  .abonnement-contenu { padding: 28px 18px; }
+  .abonnement-carte h3 { font-size: 34px; }
+  .abonnement-prix strong { font-size: 40px; }
+  .abonnement-carte li { font-size: 12px; margin-bottom: 13px; }
+  .abonnement-bouton { font-size: 10px; padding: 15px 8px; }
+  .abonnement-carte.position-gauche { --decalage: -84%; }
+  .abonnement-carte.position-droite { --decalage: 84%; }
+}
+
+@media (max-width: 650px) {
+  .carrousel-abonnements { padding: 15px 32px; overflow: hidden; }
+  .abonnements-grille { height: 565px; }
+  .abonnement-carte { width: min(100%, 320px); height: 520px; }
+  .abonnement-contenu { padding: 30px 22px; }
+  .abonnement-carte.position-centre { --profondeur-3d: 0px; }
+  .abonnement-carte.position-gauche {
+    --decalage: -83%; --profondeur-3d: -180px;
+    --angle: 35deg; --taille: .75; --opacite: .22;
+  }
+  .abonnement-carte.position-droite {
+    --decalage: 83%; --profondeur-3d: -180px;
+    --angle: -35deg; --taille: .75; --opacite: .22;
+  }
+  .fleche-abonnement { width: 32px; height: 32px; font-size: 16px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .abonnement-carte { transition: none; }
+}
+
+/* ==============================
+   COURS COLLECTIFS
+============================== */
+
+.cours {
+  background: #202522;
+  padding: 110px 6%;
+  color: #fff;
+}
+
+.cours-entete {
+  max-width: 760px;
+  margin: 0 auto 50px;
+  text-align: center;
+}
+
+.cours-entete h2 {
+  font-size: clamp(42px, 5vw, 68px);
+  margin-bottom: 20px;
+}
+
+.cours-entete > p:last-child {
+  color: #c3cbc4;
+  font-size: 15px;
+  line-height: 1.8;
+}
+
+.planning {
+  max-width: 1050px;
+  margin: auto;
+}
+
+.planning-jours {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 28px;
+}
+
+.jour {
+  flex: 1;
+  min-width: 110px;
+  padding: 17px 12px;
+  border: 1px solid #526054;
+  background: transparent;
+  color: #d3dbd4;
+  font: 700 12px 'Inter', sans-serif;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: background .25s, color .25s;
+}
+
+.jour:hover,
+.jour.actif {
+  background: #607866;
+  color: #fff;
+  border-color: #607866;
+}
+
+.planning-seances {
+  display: grid;
+  gap: 12px;
+  min-height: 160px;
+}
+
+.seance {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  background: #303a32;
+  padding: 24px 30px;
+  border: 1px solid #425045;
+  animation: apparitionSeance .3s ease;
+}
+
+.seance-heure {
+  color: #b2bba9;
+  font: 800 28px 'Barlow Condensed', sans-serif;
+  min-width: 70px;
+}
+
+.seance-details {
+  flex: 1;
+}
+
+.seance-details h3 {
+  font-size: 27px;
+  margin-bottom: 8px;
+}
+
+.seance-details p {
+  color: #bdc9bf;
+  font-size: 13px;
+}
+
+.cours-note {
+  text-align: center;
+  color: #a5b1a7;
+  font-size: 12px;
+  margin-top: 30px;
+}
+
+@keyframes apparitionSeance {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 650px) {
+  .cours {
+    padding: 80px 5%;
+  }
+
+  .jour {
+    flex: 1 1 30%;
+    min-width: 0;
+    padding: 14px 5px;
+    font-size: 10px;
+  }
+
+  .seance {
+    padding: 20px 15px;
+    gap: 15px;
+  }
+
+  .seance-heure {
+    font-size: 24px;
+    min-width: 55px;
+  }
+
+  .seance-details h3 {
+    font-size: 23px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .seance {
+    animation: none;
+  }
+}
+
+/* NOS COACHS */
+
+.coachs {
+  padding: 110px 6%;
+  background: #f5f3ed;
+}
+
+.coachs-entete {
+  max-width: 760px;
+  margin: 0 auto 55px;
+  text-align: center;
+}
+
+.coachs-entete .surtitre {
+  color: #607866;
+}
+
+.coachs-entete h2 {
+  font-size: clamp(42px, 5vw, 68px);
+  margin-bottom: 20px;
+}
+
+.coachs-entete > p:last-child {
+  color: #707770;
+  line-height: 1.8;
+}
+
+.coachs-grille {
+  max-width: 1250px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 25px;
+}
+
+.coach-carte {
+  background: #fff;
+  overflow: hidden;
+  transition: transform .35s ease,
+              box-shadow .35s ease;
+}
+
+.coach-carte:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0,0,0,.1);
+}
+
+.coach-carte img {
+  display: block;
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+}
+
+.coach-infos {
+  padding: 30px;
+}
+
+.coach-infos span {
+  color: #607866;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+}
+
+.coach-infos h3 {
+  font-size: 38px;
+  margin: 12px 0;
+}
+
+.coach-infos p {
+  color: #707770;
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+@media (max-width: 950px) {
+  .coachs-grille {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 650px) {
+  .coachs {
+    padding: 80px 6%;
+  }
+
+  .coachs-grille {
+    grid-template-columns: 1fr;
+  }
+
+  .coach-carte img {
+    height: 350px;
+  }
+}
+
+/* CONTACT NOVA FITNESS */
+
+.contact-fitness {
+  background: #f5f3ed;
+  padding: 110px 6%;
+}
+
+.contact-fitness-entete {
+  max-width: 780px;
+  margin: 0 auto 60px;
+  text-align: center;
+}
+
+.contact-fitness-entete h2 {
+  font-size: clamp(40px, 5vw, 66px);
+  margin: 15px 0 20px;
+}
+
+.contact-fitness-entete > p:last-child {
+  color: #707770;
+  line-height: 1.8;
+}
+
+.contact-fitness-grille {
+  max-width: 1200px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 1fr 1.1fr;
+  gap: 35px;
+}
+
+.contact-fitness-infos {
+  background: #202522;
+  color: white;
+  padding: 50px 40px;
+}
+
+.contact-fitness-infos h3,
+.contact-fitness-formulaire h3 {
+  font-size: 34px;
+  margin-bottom: 30px;
+}
+
+.contact-info-bloc {
+  margin-bottom: 35px;
+}
+
+.contact-info-bloc span {
+  display: block;
+  color: #a9c1ad;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+  margin-bottom: 12px;
+}
+
+.contact-info-bloc p {
+  color: #e0e6df;
+  font-size: 14px;
+  line-height: 2;
+}
+
+.contact-fitness-mention {
+  color: #aeb7ae;
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+.contact-fitness-formulaire {
+  background: white;
+  padding: 50px 40px;
+  border: 1px solid #e4e7e2;
+}
+
+.contact-fitness-formulaire > p {
+  color: #707770;
+  margin-bottom: 30px;
+  font-size: 14px;
+}
+
+#formulaire-essai {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.formulaire-ligne {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+}
+
+#formulaire-essai label {
+  display: block;
+  font-size: 12px;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+#formulaire-essai input,
+#formulaire-essai select {
+  width: 100%;
+  min-width: 0;
+  padding: 15px;
+  border: 1px solid #d9dfd9;
+  background: #fafaf8;
+  color: #202522;
+  font: inherit;
+  border-radius: 0;
+}
+
+#formulaire-essai input:focus,
+#formulaire-essai select:focus {
+  outline: 2px solid #607866;
+  outline-offset: 2px;
+}
+
+.bouton-essai {
+  margin-top: 15px;
+  padding: 19px;
+  background: #607866;
+  color: white;
+  border: none;
+  font: 700 12px 'Inter', sans-serif;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: background .3s ease;
+}
+
+.bouton-essai:hover {
+  background: #435849;
+}
+
+#message-essai {
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+@media (max-width: 850px) {
+  .contact-fitness-grille {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 550px) {
+  .contact-fitness {
+    padding: 80px 5%;
+  }
+
+  .contact-fitness-infos,
+  .contact-fitness-formulaire {
+    padding: 35px 22px;
+  }
+
+  .formulaire-ligne {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Harmoniser le champ Votre objectif */
+
+#formulaire-essai select {
+  appearance: none;
+  -webkit-appearance: none;
+
+  height: 50px;
+  border: 1px solid #d9dfd9;
+  border-radius: 0;
+  background-color: #fafaf8;
+  color: #202522;
+
+  padding: 0 40px 0 15px;
+
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23607866' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 15px center;
+  background-size: 16px;
+}
+
+
+/* ==================================================
+   NOVA FITNESS — ÉDITION PREMIUM / ANIMATIONS
+   Ajouts non destructifs : conserver les styles existants
+================================================== */
+:root { --nova-accent: #78947f; --nova-soft: #e9ede5; }
+::selection { background: #607866; color: white; }
+body { background: #f5f3ed; }
+section { isolation: isolate; }
+.hero {
+  overflow: hidden;
+  background:
+    linear-gradient(105deg, rgba(12,19,16,.94) 0%, rgba(20,34,26,.76) 43%, rgba(20,34,26,.25) 100%),
+    url("images/salle.jpg") center/cover no-repeat;
+}
+.hero::before {
+  content: ""; position: absolute; inset: 0; pointer-events: none;
+  background: radial-gradient(ellipse 46% 70% at 78% 43%, rgba(132,170,134,.17), transparent 78%),
+              linear-gradient(to top, rgba(13,24,17,.52), transparent 38%);
+}
+.hero::after {
+  content: ""; position: absolute; width: 460px; height: 460px; right: -180px; bottom: -220px;
+  border: 1px solid rgba(200,225,200,.18); border-radius: 50%; pointer-events: none;
+  box-shadow: 0 0 0 70px rgba(255,255,255,.018), 0 0 0 140px rgba(255,255,255,.013);
+}
+.hero-contenu { animation: novaHeroIn 1s cubic-bezier(.2,.75,.2,1) both; }
+.hero-accent { display: block; width: 56px; height: 3px; background: #a3bea6; margin-bottom: 30px; }
+.hero h1 { text-wrap: balance; text-shadow: 0 12px 38px rgba(0,0,0,.15); }
+.hero .bouton-principal { border: 1px solid rgba(255,255,255,.2); box-shadow: 0 12px 35px rgba(0,0,0,.18); }
+.hero-scroll { position: absolute; bottom: 32px; left: 8%; display: flex; align-items: center; gap: 12px; font-size: 10px; font-weight: 700; letter-spacing: 2px; color: #d4e0d4; z-index: 2; }
+.hero-scroll span { display: block; width: 1px; height: 38px; background: linear-gradient(to bottom, #b2c7b5, transparent); animation: novaScroll 2.5s ease-in-out infinite; }
+@keyframes novaHeroIn { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes novaScroll { 50% { transform: translateY(7px); opacity: .5; } }
+/* Fonds travaillés, sans images supplémentaires */
+.introduction { position: relative; }
+.introduction::before { content: ""; position: absolute; inset: 0 -100vw; z-index: -1; background: radial-gradient(ellipse 30% 90% at 48% 48%, rgba(123,151,127,.12), transparent 85%), #f5f3ed; }
+.espaces { background: linear-gradient(155deg, #edf1e9 0%, #f9f8f3 48%, #e6ebe4 100%); }
+.espaces-grille { gap: 24px; }
+.espace-carte { border: 1px solid rgba(76,101,79,.12); box-shadow: 0 15px 36px rgba(35,49,38,.055); }
+.espace-image { position: relative; }
+.espace-image::after { content: ""; position: absolute; inset: 0; background: linear-gradient(to top, rgba(19,38,24,.2), transparent 55%); pointer-events: none; }
+.espace-carte:hover { box-shadow: 0 26px 50px rgba(36,60,42,.15); }
+.abonnements { background: radial-gradient(ellipse 65% 40% at 50% 45%, rgba(105,137,109,.1), transparent 85%), linear-gradient(180deg, #fff 0%, #f4f6f1 100%); }
+.abonnement-carte.position-centre { box-shadow: 0 30px 65px rgba(29,49,35,.22); }
+.fleche-abonnement { box-shadow: 0 8px 22px rgba(0,0,0,.13); }
+.cours { background: radial-gradient(ellipse 60% 70% at 90% 20%, rgba(107,144,113,.2), transparent 78%), radial-gradient(ellipse 50% 60% at 0% 100%, rgba(69,105,73,.14), transparent 80%), #202522; }
+.jour { border-radius: 4px; }
+.seance { border-radius: 5px; transition: transform .25s ease, border-color .25s ease, background .25s ease; }
+.seance:hover { transform: translateX(5px); border-color: #78947f; background: #37453b; }
+.coachs { background: linear-gradient(140deg, #f5f3ed 0%, #e9eee6 52%, #f5f3ed 100%); }
+.coach-carte { box-shadow: 0 14px 34px rgba(32,37,34,.065); }
+.coach-carte img { transition: transform .65s cubic-bezier(.2,.7,.2,1); }
+.coach-carte:hover img { transform: scale(1.045); }
+.contact-fitness { background: radial-gradient(ellipse 60% 80% at 80% 40%, rgba(115,151,121,.12), transparent 85%), #f5f3ed; }
+.contact-fitness-infos { background: radial-gradient(circle at top right, rgba(118,158,123,.25), transparent 55%), #202522; }
+.contact-fitness-formulaire { box-shadow: 0 22px 50px rgba(37,58,42,.07); }
+.bouton-essai, .abonnement-bouton, .bouton-principal { position: relative; overflow: hidden; }
+.bouton-essai:hover { box-shadow: 0 10px 26px rgba(65,97,72,.25); }
+.nova-footer { background: #171e19; color: #d8e2d9; padding: 65px 6% 30px; text-align: center; }
+.nova-footer .logo { display: inline-block; margin-bottom: 16px; }
+.nova-footer > p { color: #a5bba8; font-size: 12px; font-weight: 700; letter-spacing: 2px; }
+.nova-footer-links { display: flex; justify-content: center; gap: 22px; flex-wrap: wrap; margin: 30px auto; }
+.nova-footer-links a { color: #d8e2d9; font-size: 13px; transition: color .25s; }
+.nova-footer-links a:hover { color: #a5c6a9; }
+.nova-footer small { display: block; padding-top: 24px; border-top: 1px solid rgba(255,255,255,.12); color: #91a194; font-size: 11px; }
+/* Les éléments ne sont masqués que lorsque JS confirme l'observation. */
+.nova-reveal-ready { opacity: 0; transform: translateY(24px); transition: opacity .75s ease, transform .75s cubic-bezier(.2,.7,.2,1); }
+.nova-reveal-ready.nova-visible { opacity: 1; transform: translateY(0); }
+@media (max-width: 650px) {
+  .hero-scroll { bottom: 18px; left: 6%; }
+  .hero::after { width: 260px; height: 260px; right: -150px; bottom: -130px; }
+  .nova-footer { padding-top: 50px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero-contenu, .hero-scroll span { animation: none !important; }
+  .nova-reveal-ready { opacity: 1 !important; transform: none !important; transition: none !important; }
+  .coach-carte img { transition: none !important; }
+}
+
+/* ================================================
+   CORRECTION RESPONSIVE — VERSION MOBILE
+   Cartes d'abonnement empilées, lisibles et cliquables
+================================================ */
+@media (max-width: 767px) {
+  html, body { width: 100%; max-width: 100%; overflow-x: clip; }
+  .header { position: relative; background: #171e19; }
+  .navigation { padding: 18px 5% 20px; flex-direction: column; gap: 18px; }
+  .logo { font-size: 25px; }
+  .liens { width: 100%; display: flex; justify-content: center; flex-wrap: wrap; gap: 10px 16px; }
+  .liens a { font-size: 11px; line-height: 1.5; }
+  .liens .bouton-nav { padding: 10px 13px; }
+  .hero { min-height: 570px; min-height: min(730px, 83svh); padding: 80px 6% 85px; background-position: 60% center; }
+  .hero h1 { font-size: clamp(43px, 10vw, 66px); overflow-wrap: anywhere; }
+  .hero-contenu > p:not(.surtitre) { font-size: 14px; line-height: 1.65; }
+  .hero-scroll { display: none; }
+  .introduction { padding: 72px 6%; }
+  .introduction h2, .espaces-entete h2, .abonnements-entete h2,
+  .cours-entete h2, .coachs-entete h2, .contact-fitness-entete h2 {
+    font-size: clamp(36px, 9vw, 52px); overflow-wrap: anywhere;
+  }
+  .espaces, .abonnements, .cours, .coachs, .contact-fitness { padding: 76px 5%; }
+  .espaces-grille, .coachs-grille { grid-template-columns: minmax(0,1fr); gap: 22px; }
+  .espace-image { height: 250px; }
+  .coach-carte img { height: 320px; }
+  /* On abandonne volontairement la perspective 3D sur petit écran :
+     les trois offres restent visibles, sans superposition ni texte coupé. */
+  .carrousel-abonnements { padding: 0; overflow: visible; }
+  .abonnements-grille { display: grid; grid-template-columns: minmax(0,1fr); gap: 24px; height: auto; max-width: 460px; perspective: none; transform-style: flat; }
+  .abonnement-carte, .abonnement-carte.position-centre,
+  .abonnement-carte.position-gauche, .abonnement-carte.position-droite,
+  .abonnement-carte:hover, .abonnement-carte.carte-active:hover {
+    position: relative; top: auto; left: auto; width: 100%; min-width: 0;
+    height: auto; min-height: 0; opacity: 1; z-index: auto;
+    transform: none; transition: box-shadow .3s ease;
+  }
+  .abonnement-carte.position-centre { box-shadow: 0 12px 35px rgba(29,49,35,.12); }
+  .abonnement-contenu { padding: 36px 26px; height: auto; }
+  .abonnement-description { min-height: 0; }
+  .abonnement-carte ul { flex: none; padding-bottom: 20px; }
+  .abonnement-carte li { margin-bottom: 12px; font-size: 13px; }
+  .abonnement-badge { top: -13px; }
+  .fleche-abonnement { display: none; }
+  .planning-jours { gap: 8px; }
+  .jour { flex: 1 1 calc(33.333% - 8px); min-width: 0; }
+  .seance { align-items: flex-start; }
+  .contact-fitness-grille { grid-template-columns: minmax(0,1fr); gap: 22px; }
+  .contact-fitness-infos, .contact-fitness-formulaire { min-width: 0; padding: 34px 24px; }
+  .formulaire-ligne { grid-template-columns: minmax(0,1fr); }
+  #formulaire-essai input, #formulaire-essai select { font-size: 16px; }
+  .contact-info-bloc p { overflow-wrap: anywhere; }
+  .nova-footer-links { gap: 14px 20px; }
+}
+@media (max-width: 380px) {
+  .hero { padding: 65px 5% 75px; }
+  .hero h1 { font-size: 42px; }
+  .navigation { padding-inline: 3%; }
+  .liens { gap: 9px 12px; }
+  .liens a { font-size: 10px; }
+  .contact-fitness-infos, .contact-fitness-formulaire { padding: 28px 18px; }
+}
+
+/* CORRECTION FINALE : rétablir le carrousel sur mobile.
+   Surcharge les anciennes règles d'empilement (max-width: 767px). */
+@media (max-width: 767px) {
+ .carrousel-abonnements { position:relative; padding:16px 35px; overflow:hidden; }
+ .abonnements-grille { display:block; position:relative; width:100%; max-width:460px; height:565px; perspective:1100px; transform-style:preserve-3d; margin:auto; }
+ .abonnement-carte,
+ .abonnement-carte.position-centre,
+ .abonnement-carte.position-gauche,
+ .abonnement-carte.position-droite,
+ .abonnement-carte:hover,
+ .abonnement-carte.carte-active:hover {
+   position:absolute; top:50%; left:50%; width:min(100%, 310px); height:515px; min-height:0;
+   opacity:var(--opacite,1); z-index:var(--niveau,1);
+   transform:translate(-50%,-50%) translateX(var(--decalage,0%)) translateZ(var(--profondeur-3d,0px)) rotateY(var(--angle,0deg)) scale(var(--taille,1));
+   transition:transform 700ms cubic-bezier(.22,.8,.25,1),opacity 700ms ease,box-shadow 700ms ease;
+ }
+ .abonnement-carte.position-centre { --decalage:0%; --profondeur-3d:0px; --angle:0deg; --taille:1; --opacite:1; --niveau:3; }
+ .abonnement-carte.position-gauche { --decalage:-84%; --profondeur-3d:-150px; --angle:30deg; --taille:.78; --opacite:.25; --niveau:1; }
+ .abonnement-carte.position-droite { --decalage:84%; --profondeur-3d:-150px; --angle:-30deg; --taille:.78; --opacite:.25; --niveau:1; }
+ .abonnement-contenu { height:100%; padding:30px 23px; }
+ .abonnement-carte ul { flex:1; }
+ .fleche-abonnement { display:grid; width:34px; height:34px; z-index:20; }
+ .fleche-gauche { left:0; } .fleche-droite { right:0; }
+}
+@media (max-width: 360px) {
+ .carrousel-abonnements { padding-inline:27px; }
+ .abonnement-carte, .abonnement-carte.position-centre, .abonnement-carte.position-gauche, .abonnement-carte.position-droite { width:min(100%,290px); }
+ .abonnement-contenu { padding:28px 18px; }
+}
+
+/* CENTRAGE DES BOUTONS ABONNEMENTS */
+
+.abonnement-bouton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  width: 100%;
+  min-height: 54px;
+  padding: 15px 10px;
+  margin-top: auto;
+  line-height: 1.4;
+}
